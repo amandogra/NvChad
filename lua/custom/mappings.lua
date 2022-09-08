@@ -3,15 +3,21 @@
 local M = {}
 -- local gs = package.loaded.gitsigns
 
--- M.telescope = {
---   n = {
---     -- overwriting git related commands
---     ["<leader>cm"] = "",
---     ["<leader>gt"] = "",
---     ["<leader>fgc"] = { "<cmd> Telescope git_commits <CR>", " git commits" },
---     ["<leader>gst"] = { "<cmd> Telescope git_status <CR>", " git status" },
---   }
--- }
+-- add this table only when you want to disable default keys
+M.disabled = {
+  n = {
+      ["<leader>cm"] = "",
+      ["<leader>gt"] = ""
+  }
+}
+
+-- overwriting keys related to Telescope/Git
+M.telescope = {
+  n = {
+    ["<leader>fgc"] = { "<cmd> Telescope git_commits <CR>", " git commits" },
+    ["<leader>gst"] = { "<cmd> Telescope git_status <CR>", " git status" },
+  }
+}
 
 M.gitsigns = {
   n = {
